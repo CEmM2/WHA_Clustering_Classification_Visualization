@@ -11,6 +11,7 @@
 %\doublespacing
 
 \usepackage[table]{xcolor}
+\usepackage{soul}
 \usepackage{booktabs}
 \usepackage[colorlinks = true,linkcolor = blue]{hyperref}
 \usepackage{amsmath}
@@ -38,17 +39,18 @@
 	
 	\title{Unsupervised Machine Learning in Fractography: Evaluation and Interpretation}
 
-	
-	
+
+​	
+​	
 	\author[UC3M]{Stylianos Tsopanidis\corref{cor}}
 	\author[TEC]{Shmuel Osovski}
 	\cortext[cor]{Corresponding author. Tel. +30-6932913594; E-mail address: tsopanidisstelios@gmail.com}
-	
-	
-	
+
+
+​	
+​	
 	\address [UC3M]{Department of Continuum Mechanics and Structural Analysis. University Carlos III of Madrid. Avda. de la Universidad, 30. 28911 Legan{\'e}s, Madrid, Spain}
 	\address [TEC]{Faculty of Mechanical Engineering, Technion - Israel Institute of Technology, Haifa, Israel}
-
 
 \begin{abstract}
 Modern computer vision and machine learning techniques, when applied in Fractography bare the potential to automate much of the failure analysis process and remove human induced ambiguity or bias. Given the complex interaction between intrinsic (e.g. microstructure) and extrinsic (e.g. environment, loading history) factors leading to failure, deep learning methods, which exhibit very high efficiency in establishing complex interconnections between the input data, may end up revealing new correlations and  information that is encoded onto the complex geometries of fracture surfaces and remained hidden from us so far.  In this work, we examine the potential use of an unsupervised learning pipeline to classify fracture surfaces of five tungsten heavy alloys following their chemical content (i.e. Tungsten percentage). Encouraged by the success of the algorithms, we move on and analyze the features on the fracture surfaces which are governing the decision process of the algorithms.  The fractographic interpretation of these features shows that the extent of plasticity on the fracture surface serves as a measure for the classification process. The examined pipeline can be used to identify failures originating from erroneous manufacturing processes, leading to locally varying Tungsten concentrations and ultimately premature failure. 	
@@ -62,7 +64,7 @@ Modern computer vision and machine learning techniques, when applied in Fractogr
 \begin{keyword}	
 	
 	Quantitative Fractography \sep Convolutional Neural Networks \sep t-SNE \sep Unsupervised Learning \sep Data Clustering  \sep Machine Learning Interpretability 
-	
+
 \end{keyword}
 
 
@@ -214,8 +216,7 @@ The combination of the parameter values that resulted into the best performance 
 	\label{table:clust} 
 \end{table} 
 
-The dataset of 810 SEM images, obtained by fracture experiments on the WHA samples with different tungsten composition, is imported to the clustering data pipeline and the resulted 2D scatter plot is shown in Fig. \ref{fig:cluster_result}.
-
+\hl{The dataset of 810 SEM images, obtained by fracture experiments on the WHA samples with different tungsten composition, is imported to the clustering data pipeline and the resulted 2D scatter plot is shown in Fig. \ref{fig:cluster_result}.  Each image is represented by a point in the 2D space and colored by the clustering algorithm, which assigns each point to one of the five classes (i.e. Tungsten percentage in the original sample).}
 
 \begin{figure}[!h]
 	\centering
@@ -223,8 +224,8 @@ The dataset of 810 SEM images, obtained by fracture experiments on the WHA sampl
 	\caption{Clustering results on the WHA fracture images dataset.}
 	\label{fig:cluster_result}
 \end{figure}
-  
-The initial qualitative assessment of the result shows that the algorithm succeeds in creating three distinct clusters (green, blue and red data points in the plot), while k-Means manages to separate the main cluster in the middle by assigning different labels to the data points. Subsequently, in order to quantify the performance of the algorithm the data points are plotted with their ground truth labels (Fig. \ref{fig:cluster_result_gt}). 
+
+The initial qualitative assessment of the result shows that the algorithm succeeds in creating three distinct clusters (green, blue and red data points in the plot), while k-Means manages to separate the main cluster in the middle by assigning different labels to the data points. \he{Subsequently, in order to quantify the performance of the algorithm the data points are plotted with their ground truth labels (i.e. colored by the sample they came from), while the coordinates in the 2D reduced space (Fig. \ref{fig:cluster_result_gt}) are the same as in Fig. \ref{fig:cluster_result}.} 
 
 \begin{figure}[!h]
 	\centering
@@ -233,7 +234,7 @@ The initial qualitative assessment of the result shows that the algorithm succee
 	\label{fig:cluster_result_gt}
 \end{figure}
 
-The ground truth plot shows that the algorithm fails to cluster correctly the data points that belong to the first SEM fracture image of the sample with 90wt\% tungsten composition; for each tungsten composition sample two SEM images were obtained and then cropped before added to the dataset, as it was explained in the beginning of the previous section. The erroneous predictions are marked (see crossed data points in Fig. \ref{fig:cluster_result_errors}) and the accuracy of the algorithm is computed to 81.2\%.
+\hl{The ground truth plot shows that the algorithm fails to cluster correctly the data points that belong to the first SEM fracture image of the sample with 90wt\% tungsten composition (i.e. blue points in Fig.  \ref{fig:cluster_result_gt} where colored otherwise in Fig.  \ref{fig:cluster_result} and embedded in clusters describing the WHA92 and WHA97 samples); for each tungsten composition  two SEM images were obtained and then cropped before added to the dataset, as it was explained in the beginning of the previous section. The erroneous predictions are marked (see crossed data points in Fig. \ref{fig:cluster_result_errors}) and the accuracy of the algorithm is computed to 81.2\%.}
 
 
 \begin{figure}[!h]
@@ -243,8 +244,9 @@ The ground truth plot shows that the algorithm fails to cluster correctly the da
 	\label{fig:cluster_result_errors}
 \end{figure}
 
-Additionally, the confusion matrix presented in Fig. \ref{fig:confusion_mat} verifies that the main source of clustering errors is the data points that originate from the first SEM fracture image of the  sample with 90wt\% tungsten composition.
- 
+\hl{In Fig. \ref{fig:confusion_mat}, we present the confusion matrix which was construct group wise. The confusion matrix' entries are the measured  frequency of predicting the label on the $x$ axis for an image originating from the label on the $y$ axis. The confusion matrix presented in Fig. \ref{fig:confusion_mat} verifies that the main source of clustering errors is the data points that originate from the first SEM fracture image of the  sample with 90wt$\% $tungsten composition, which was identified as WHA97 in 35 $\%$ of the cases and WHA92 in 13 $\%$ of the cases. }
+
+
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.5\textwidth]{confusion_mat.png}
@@ -302,7 +304,7 @@ The answer to this question is the subject of the last part of this section, whi
 \end{figure}
 
   
- 
+
 \subsection{Fracture images classification}
 
 The WHA fracture images dataset, without including the dataset images from the A102 SEM image (in Fig. \ref{fig:A_102}), is imported into the classification algorithm. 675 images of this dataset are assigned to training and the rest 54 are considered as the test images. Following the computational framework for the classification of the dataset, the algorithm is plotting the data point that correspond to the test images onto a colormap that defines the labels for the different tungsten compositions. For the k-Nearest Neighbors algorithm in the classification data pipeline, the number of nearest neighbors is set to $k=15$ and uniform weight distribution is used.
@@ -324,21 +326,30 @@ The WHA fracture images dataset, without including the dataset images from the A
 	\caption{Classification results and ground truth annotations, with classification errors inside the red circles.}
 \end{figure}
 
-The result of this classification process is presented in Fig. \ref{fig:classification}. The position that each test data point on the colormap, which is computed by the classification data pipeline, defines the label that is assigned to the data point. Knowing the ground truth annotations for the test data points allows the evaluation of the classification errors (data points inside the red circles in Fig. \ref{fig:classification_gt}) and enables the computation of the classification accuracy. The accuracy of the classification predictions is computed to 93\%, while in numerous tests performed on the same dataset the lowest accuracy was 85\%.  
- 
+The result of this classification process is presented in Fig. \ref{fig:classification}. The position that each test data point on the colormap, which is computed by the classification data pipeline, defines the label that is assigned to the data point. Knowing the ground truth annotations for the test data points allows the evaluation of the classification errors (data points inside the red circles in Fig. \ref{fig:classification_gt}) and enables the computation of the classification accuracy. \hl{The accuracy of the classification predictions is computed to be 93\%, for the test and training sets demonstrated in Fig. \ref{fig:classification}. We have conducted numerous tests in which the test and training tests were randomly selected and of which the lowest accuracy was 85\%.} 
+
    
 
 
-
-\subsection{Comparison with Haralick texture descriptors method}
+\subsection{Comparison with other methods}
 
 The evaluation of the clustering and classification results shows that the two algorithms presented here exhibit very high accuracy when performing on a dataset of fracture images with very similar structural and morphological characteristics. 
 
-In order to have a reference and better understanding of the algorithm efficiency, the WHA dataset is imported into an algorithm that extracts different texture descriptors and consequently enable image classification, following the method proposed by \citet{haralick}. The central component of this statistical methodology, which is commonly used for images classification tasks where texture is of importance (e.g. fractographs), is the Gray Level Cooccurrence Matrix (GLCM). The Haralick method defines 14 texture descriptors, which after being trained on a training dataset, enable classification on the fracture images of a test dataset. 
+\hl{To highlight the strength of the proposed method we have compared the obtained accuracy with two other methods. The first form of analysis we have considered as an alternative to our method, is to simply take back-scattered electron images of the fracture surfaces, and quantify the relative area fraction of  the bright (W) and dark (NiFe) regions via binary segmentation. The results of this test are summarized in \ref{T2}. Evidently, the measured Tungsten arear fraction fails to serve as a tool for classification of the fracture surfaces. }
+\begin{figure}[!h]
+	\centering
+	\fbox{\includegraphics[width=0.6\textwidth]{BSE_tungsten_percent.png}}
+	\caption{Table 2: Tungsten area percentage as obtained from segmentation of BSE images of the fracture surfaces}
+	\label{fig:T2}
+\end{figure}
 
-The performance of the Haralick texture descriptors algorithm on the WHA fracture images dataset is very poor, with classification accuracy of 21\%. Practically, this evaluation shows that the algorithm, which is based on a well-established method commonly used  for image classification, fails to classify the fracture images of the WHA dataset and reveals the complexity of the task at hand. Additionally, it shows the great potential of the Clustering and Classification algorithms that are presented in this paper and makes more evident the importance of their high efficiency performance.        
+\hl{Next, we compare the proposed methodology accuracy with that of a well established image analysis method, based on the image texture. Our WHA dataset is imported into an algorithm that extracts different texture descriptors and consequently enable image classication, following the method proposed by} \citet{haralick}. The central component of this statistical methodology, which is commonly used for images classification tasks where texture is of importance (e.g. fractographs), is the Gray Level Cooccurrence Matrix (GLCM). The Haralick method defines 14 texture descriptors, which after being trained on a training dataset, enable classification on the fracture images of a test dataset. 
 
+\hl{The performance of the Haralick texture descriptors algorithm on the WHA fracture images dataset is very poor, with classification accuracy of 21\%. Practically, this evaluation shows that the algorithm, which is based on a well-established method commonly used  for image classification, fails to classify the fracture images of the WHA dataset and reveals the complexity of the task at hand. While the Haralick texture descriptors are known measures, their suitability for a given classification task is strongly dependent on the texture variations existing in the images at hand. On the other hand, the proposed method is able to identify the features which set the different classes apart and is thus more flexible.}
+	
+\hl{The comparisons presented in this section,  demonstrate the great potential of the Clustering and Classification algorithms that are presented in this paper and makes more evident the importance of their high efficiency performance.}
 
+ 
 \subsection{Features visualization and Interpretability}
 
 The objective of this section is to understand the internal functions that enable the clustering, and as an extension the classification, pipeline in performing with the reported high efficacy on the task at hand. More specifically, the study focuses on the visualization and consequently the interpretation of the features that the algorithm is identifying in the input fracture images and through this information aims to gain a better understanding on how these extracted features enable accurate predictions. 
@@ -351,7 +362,8 @@ Considering the architecture of the VGG16 network, the output of the last convol
 
 Finally, the computation of the eigenvalues ($\lambda_k$) and the eigenvectors ($\vec{u}_k$) of the covariance matrix are computed with the Singular Value Decomposition (SVD) method. 
 
-The eigenvalues express the total variance of the linear combinations of the feature vectors ($\vec{a}_c$) with the computed eigenvectors ($\vec{u}_k$), which are called \textit{Principal Components} and their mathematical definition is:
+\hl{The eigenvalues express the total variance of the linear combinations of the feature vectors ($\vec{a}_c$) with the computed eigenvectors ($\vec{u}_k$), which are called \textit{Principal Components}. The principal components are ordered in such a way that the first principal component (that is, a linear combination of $n$ features from  $\vec{a}_c$) contains more information than all components to follow, the second contains as much of the remaining information etc. . The mathematical definition of the principal components is given by:}
+
 
 \begin{equation*}
 \vec{P}_k = \textbf{X} \cdot \vec{u}_k
@@ -361,7 +373,11 @@ This enables the representation of the 512-dimensional dataset of the feature ve
 
 The computation of the eigenvalues from the PCA algorithm of the clustering pipeline on the WHA dataset shows that the first principal component expresses 41.6\% of the information in the reduced dimensionality representation of the dataset. Note that the second and the third principal components express 16.5\% and 8.7\% of the information, respectively, while the influence of the rest of the principal components is even less significant.  
 
-Following this analysis becomes apparent that for each input fracture image $c$ of the WHA dataset, the weighted, by the coefficients of the eigenvector of the first principal component, sum of all the activation maps exported by the final convolution layer will show the exact features of the input image that are utilized by the clustering algorithm in the process of grouping this image with the rest of the images in the WHA fracture images dataset. This conclusion is mathematically defined as follows:
+\hl{Following this analysis becomes apparent that for each input fracture image $c$ of the WHA dataset, the weighted (by the coefficients of the eigenvector of the first principal component) sum of all the activation maps exported by the final convolution layer will show the exact features of the input image that are utilized by the clustering algorithm in the process of grouping this image with the rest of the images in the WHA fracture images dataset. }
+	
+\hl{In other words, to get a visual glance at the inner working of the clustering and classification algorithm, we can color the fracture surface images such that the regions making the larger contribution to the algorithm's ability to classify them as belonging to one of the classes will be highlighted. }
+	
+\hl{This conclusion is mathematically defined as follows:}
 
 \begin{equation*}
 \textbf{A}_{heatmap}^c = \sum_{k=1}^{512} |w_k| \cdot \textbf{A}^c_k 
@@ -443,7 +459,7 @@ Finally, the confusion matrix in Fig. \ref{fig:confusion_mat} shows that the dat
 
 
 Undoubtedly, a more systematic study of this clustering algorithm with different fracture datasets is required to prove or disprove the assumptions that are made in this interpretation of the algorithm's internal operation analysis. This paper encourages further investigation and the authors are convinced that a profound understanding of the functionality of the recently introduced Machine Learning algorithms can open up new possibilities with novel efficient characterization tools that optimize current methods in Fracture Mechanics.          
-  
+
 %\begin{figure}[!h]
 %	\centering
 %	\begin{tabular}[t]{c}
@@ -456,7 +472,7 @@ Undoubtedly, a more systematic study of this clustering algorithm with different
 %	\caption{Activation heatmaps for a representative sub-set of the WHA fracture dataset.}
 %	\label{fig:activ_maps}
 %\end{figure}
-  
+
 
 \section*{Summary}
 \label{conclusions_label}
@@ -466,7 +482,7 @@ This paper evaluates the performance of an \textit{Unsupervised Machine Learning
 Subsequently, by adding a \textit{minimally supervised} Machine Learning algorithm at the end of the clustering pipeline and defining a new computational framework, the classification of the fracture images according the tungsten composition of the sample that they belong is enabled. The classification accuracy is computed to 93\%, while the Haralick texture descriptors fail to classify this fracture images dataset, since they achieve accuracy of 21\%. 
 
 Finally, in an attempt to interpret the functionality of the clustering algorithm, this research work introduces a method that enables the visualization of the features in the input fracture images that are activated by the algorithm and enable the identification and clustering of the images according to the tungsten composition. More specifically, a set of activation heatmaps - one for each input fracture image - is computed to enable the visualization of the exact locations in each input fracture image that are activated by the algorithm and consequently are used to enable the accurate clustering of the dataset. The interpretation of these activation heatmaps shows that the algorithm is using the ductile micro-fracture modes (dimples), which are the product of the ductile fracture of the Nickel-Ferrous matrix, in order to group the WHA dataset according to the tungsten composition. This estimation of ductility of the fracture surfaces is correlated to both the percentage of the NiFe presence in the alloy as well as to the relative amount of matrix failure exhibited by the specimen and this creates a criterion for the clustering process.  One can speculate, that since different loading scenarios (eg. loading rate, triaxiality etc.) will result in different crack paths and will affect the relative amount of ductile vs brittle fracture indicators in the surface, a similar pipeline could be used to classify specimens following the conditions at which they failed. This hypothesis will be tested in a future work.   
- 
+
 
 \section*{Data availability} The  dataset used for this study and the corresponding Activation Maps are published in Materials Data Facility (MDF) with DOI: \url{https://doi.org/10.18126/aph0-olbz}. The source code is available at \url{https://github.com/SteliosTsop/WHA_Clustering_Classification_Visualization}.  
 
