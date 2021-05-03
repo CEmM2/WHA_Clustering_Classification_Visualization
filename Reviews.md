@@ -41,29 +41,29 @@ We are pleased to submit our revised version of "*Unsupervised Machine Learning 
 
 <span style="color:blue">On page 14, the paragraph :</span>
 
-> The ground truth plot shows that the algorithm fails to cluster correctly the data points that belong to the first SEM fracture image of the sample with 90wt\% tungsten composition; for each tungsten composition sample two SEM images were obtained and then cropped before added to the dataset, as it was explained in the beginning of the previous section. The erroneous predictions are marked (see crossed data points in Fig. 5) and the accuracy of the algorithm is computed to 81.2\%.
+> The ground truth plot shows that the algorithm fails to cluster correctly the data points that belong to the first SEM fracture image of the sample with 90wt$\%$ tungsten composition; for each tungsten composition sample two SEM images were obtained and then cropped before added to the dataset, as it was explained in the beginning of the previous section. The erroneous predictions are marked (see crossed data points in Fig. 5) and the accuracy of the algorithm is computed to 81.2$\%$.
 
 <span style="color:blue">was modified to:</span>
 
-> The ground truth plot shows that the algorithm fails to cluster correctly the data points that belong to the first SEM fracture image of the sample with 90wt\% tungsten composition (i.e. blue points in Fig. 5 where colored otherwise in Fig. 4 and embedded in clusters describing the WHA92 and WHA97 samples); for each tungsten composition two SEM images were obtained and then cropped before added to the dataset, as it was explained in the beginning of the previous section. The erroneous predictions are marked (see crossed data points in Fig. 6) and the accuracy of the algorithm is computed to 81.2\%.
+> The ground truth plot shows that the algorithm fails to cluster correctly the data points that belong to the first SEM fracture image of the sample with 90wt$\%$ tungsten composition (i.e. blue points in Fig. 5 were colored otherwise in Fig. 4 and embedded in clusters describing the WHA92 and WHA97 samples); for each tungsten composition two SEM images were obtained and then cropped before added to the dataset, as it was explained in the beginning of the previous section. The erroneous predictions are marked (see crossed data points in Fig. 6) and the accuracy of the algorithm is computed to 81.2$\%$.
 
 <span style="color:blue">On page 14, the paragraph:</span>
 
-> Additionally, the confusion matrix presented in Fig. 7 verifies that the main source of clustering errors is the data points that originate from the first SEM fracture image of the  sample with 90wt\% tungsten composition.
+> Additionally, the confusion matrix presented in Fig. 7 verifies that the main source of clustering errors is the data points that originate from the first SEM fracture image of the  sample with 90wt$\%$ tungsten composition.
 
 <span style="color:blue">was modified to:</span>
 
-> In Fig. 7, we present the confusion matrix which was construct group wise. The confusion matrix' entries are the measured  frequency of predicting the label on the $x$ axis for an image originating from the label on the $y$ axis. The confusion matrix presented in Fig. 7 verifies that the main source of clustering errors is the data points that originate from the first SEM fracture image of the  sample with 90wt$\% $tungsten composition, which was identified as WHA97 in 35 $\%$ of the cases and WHA92 in 13 $\%$ of the cases. 
+> In Fig. 7, we present the confusion matrix which was construct group wise. The confusion matrix' entries are the measured  frequency of predicting the label on the $x$ axis for an image originating from the label on the $y$ axis. The confusion matrix presented in Fig. 7 verifies that the main source of clustering errors is the data points that originate from the first SEM fracture image of the  sample with 90wt$\%$ tungsten composition, which was identified as WHA97 in 35 $\%$ of the cases and WHA92 in 13 $\%$ of the cases. 
 
 <span style="color:blue"> **Section 3.2** </span>
 
 <span style="color:blue">On page 18, right before section 3.3 we have added clarification to the statement regarding the lowest accuracy: </span>
 
-> The accuracy of the classification predictions is computed to 93\%, while in numerous tests performed on the same dataset the lowest accuracy was 85\%.  
+> The accuracy of the classification predictions is computed to 93$\%$, while in numerous tests performed on the same dataset the lowest accuracy was 85$\%$.  
 
 <span style="color:blue"> which now reads: </span>
 
->The accuracy of the classification predictions is computed to be 93%, for the test and training sets demonstrated in Fig. 11. We have conducted numerous tests in which the test and training tests were randomly selected and of which the lowest accuracy was 85%.
+>The accuracy of the classification predictions is computed to be 93$\%$, for the test and training sets demonstrated in Fig. 11. We have conducted numerous tests in which the test and training tests were randomly selected and of which the lowest accuracy was 85$\%$.
 
 <span style="color:blue"> **Section 3.3** </span>
 
@@ -79,16 +79,16 @@ We are pleased to submit our revised version of "*Unsupervised Machine Learning 
 
 > To highlight the strength of the proposed method we have compared the obtained accuracy with two other methods. 
 >
-> The first form of analysis we have considered as an alternative to our method, is to simply take back-scattered electron images of the fracture surfaces, and quantify the relative area fraction of  the bright (W) and dark (NiFe) regions via binary segmentation. The results of this test are summarized in Table 2. Evidently, the measured Tungsten arear fraction fails to serve as a tool for classification of the fracture surfaces. <img src="BSE_tungsten_percent.png" style="zoom: 50%;" />
+> The first form of analysis we have considered as an alternative to our method, is to simply take back-scattered electron images of the fracture surfaces, and quantify the relative area fraction of  the bright (W) and dark (NiFe) regions via binary segmentation. The results of this test are summarized in Table 2. Evidently, the measured Tungsten area fraction fails to serve as a tool for classification of the fracture surfaces. <img src="BSE_tungsten_percent.png" style="zoom: 50%;" />
 
 <span style="color:blue">The beginning of the discussion regarding Haralick texture descriptors was modified to read: </span>
 
 > Next, we compare the proposed methodology accuracy with that of a well established image analysis method, based on the image texture. Our WHA dataset is imported into an algorithm that extracts different texture descriptors
-> and consequently enable image classication, following the method proposed by Haralick et al. (1973).  
+> and consequently enable image classification, following the method proposed by Haralick et al. (1973).  
 
 <span style="color:blue">And the comparison between the methods was slightly altered to read:</span>
 
-> The performance of the Haralick texture descriptors algorithm on the WHA fracture images dataset is very poor, with classification accuracy of 21\%. Practically, this evaluation shows that the algorithm, which is based on a well-established method commonly used  for image classification, fails to classify the fracture images of the WHA dataset and reveals the complexity of the task at hand. While the Haralick texture descriptors are known measures, their suitability for a given classification task is strongly dependent on the texture variations existing in the images at hand. On the other hand, the proposed method is able to identify the features which set the different classes apart and is thus more flexible.  
+> The performance of the Haralick texture descriptors algorithm on the WHA fracture images dataset is very poor, with classification accuracy of 21$\%$. Practically, this evaluation shows that the algorithm, which is based on a well-established method commonly used  for image classification, fails to classify the fracture images of the WHA dataset and reveals the complexity of the task at hand. While the Haralick texture descriptors are known measures, their suitability for a given classification task is strongly dependent on the texture variations existing in the images at hand. On the other hand, the proposed method is able to identify the features which set the different classes apart and is thus more flexible.  
 >
 > The comparisons presented in this section,  demonstrate the great potential of the Clustering and Classification algorithms that are presented in this paper and makes more evident the importance of their high efficiency performance.
 
@@ -100,7 +100,7 @@ We are pleased to submit our revised version of "*Unsupervised Machine Learning 
 
 <span style="color:blue">To:</span>
 
-> The eigenvalues express the total variance of the linear combinations of the feature vectors ($\vec{a}_c$) with the computed eigenvectors ($\vec{u}_k$), which are called \textit{Principal Components}. The principal components are ordered in such a way that the first principal component (that is, a linear combination of $n$ features from  $\vec{a}_c$) contains more information than all components to follow, the second contains as much of the remaining information etc. . The mathematical definition of the principal components is given by:
+> The eigenvalues express the total variance of the linear combinations of the feature vectors ($\vec{a}_c$) with the computed eigenvectors ($\vec{u}_k$), which are called $\textit{Principal Components}$. The principal components are ordered in such a way that the first principal component (that is, a linear combination of $n$ features from  $\vec{a}_c$) contains more information than all components to follow, the second contains as much of the remaining information etc. . The mathematical definition of the principal components is given by:
 
 <span style="color:blue">On page 20, the paragraph starting from line 56  was modified from</span>
 
@@ -122,7 +122,7 @@ We are pleased to submit our revised version of "*Unsupervised Machine Learning 
 
 > What are they good for
 
-<span style="color:blue"> As noted in the introduction the two questions phrased in the introduction are what we perceive as  the two barriers the community need to over come for machine-learning approaches to make their was into fractographic analysis in a more wide spread manner. Indeed, under the $1^st$ question *what are they good for* we have listed the possibility of establishing new correlations between fracture surfaces and the fracture toughness. **However**, this is mentioned merely as a future direction, which we strongly believe can be attained. In fact, much of our recent efforts are directed towards this goal and we hope to be able to share them with the community in the near fracture. </span>
+<span style="color:blue"> As noted in the introduction the two questions phrased in the introduction are what we perceive as  the two barriers the community need to over come for machine-learning approaches to make their was into fractographic analysis in a more wide spread manner. Indeed, under the $1^{st}$ question *what are they good for* we have listed the possibility of establishing new correlations between fracture surfaces and the fracture toughness. **However**, this is mentioned merely as a future direction, which we strongly believe can be attained. In fact, much of our recent efforts are directed towards this goal and we hope to be able to share them with the community in the near fracture. </span>
 
 <span style="color:blue">In the context of the work submitted for publication, we have not touched on such correlations simply because we did not have the tools to do so at the time of submissions (almost 12 months ago). While we are now approaching the capability of dealing with that, even now we are not there yet. </span>
 
