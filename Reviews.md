@@ -13,7 +13,7 @@ We are pleased to submit our revised version of "*Unsupervised Machine Learning 
 
 <span style="color:blue"> The scale bars have been accidentally omitted. The figures in the revised version have been mended and include the scale bars. </span>
 
-<span style="color:blue">We also wish to note that all of the images used for this study were taken at the same resolution of 4096x4096 pixels spanned overa  $600\mu m$ viewfield.  </span>
+<span style="color:blue">We also wish to note that all of the images used for this study were taken at the same resolution of 4096x4096 pixels spanned over a  $600\mu m$ viewfield.  </span>
 
 **In the manuscript, the benchmark, especially the data recognition, for evaluating and classifying the images for fracture need better interpretation.**
 
@@ -100,7 +100,7 @@ We are pleased to submit our revised version of "*Unsupervised Machine Learning 
 
 <span style="color:blue">To:</span>
 
-> The eigenvalues express the total variance of the linear combinations of the feature vectors ($\vec{a}_c$) with the computed eigenvectors ($\vec{u}_k$), which are called _Principal Components_. The principal components are ordered in such a way that the first principal component (that is, a linear combination of $n$ features from  $\vec{a}_c$) contains more information than all components to follow, the second contains as much of the remaining information etc. . The mathematical definition of the principal components is given by:
+> The eigenvalues express the total variance of the linear combinations of the feature vectors ($\vec{a}_c$) with the computed eigenvectors ($\vec{u}_k$), which are called *Principal Components*. The principal components are ordered in such a way that the first principal component (that is, a linear combination of $n$ features from  $\vec{a}_c$) contains more information than all components to follow, the second contains as much of the remaining information etc. . The mathematical definition of the principal components is given by:
 
 <span style="color:blue">On page 20, the paragraph starting from line 56  was modified from</span>
 
