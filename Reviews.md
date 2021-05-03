@@ -96,11 +96,11 @@ We are pleased to submit our revised version of "*Unsupervised Machine Learning 
 
 <span style="color:blue">On page 20, lines 14-18 were modified from:</span>
 
-> The eigenvalues express the total variance of the linear combinations of the feature vectors ($\vec{a}_c$) with the computed eigenvectors ($\vec{u}_k$), which are called \textit{Principal Components} 
+> The eigenvalues express the total variance of the linear combinations of the feature vectors ($\vec{a}_c$) with the computed eigenvectors ($\vec{u}_k$), which are called  $\textit{Principal Components}$.
 
 <span style="color:blue">To:</span>
 
-> The eigenvalues express the total variance of the linear combinations of the feature vectors ($\vec{a}_c$) with the computed eigenvectors ($\vec{u}_k$), which are called *Principal Components*. The principal components are ordered in such a way that the first principal component (that is, a linear combination of $n$ features from  $\vec{a}_c$) contains more information than all components to follow, the second contains as much of the remaining information etc. . The mathematical definition of the principal components is given by:
+> The eigenvalues express the total variance of the linear combinations of the feature vectors ($\vec{a}_c$) with the computed eigenvectors ($\vec{u}_k$), which are called $\textit{Principal Components}$. The principal components are ordered in such a way that the first principal component (that is, a linear combination of $n$ features from  $\vec{a}_c$) contains more information than all components to follow, the second contains as much of the remaining information etc. . The mathematical definition of the principal components is given by:
 
 <span style="color:blue">On page 20, the paragraph starting from line 56  was modified from</span>
 
